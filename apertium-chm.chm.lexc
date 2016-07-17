@@ -2,7 +2,15 @@
 
 Multichar_Symbols
 
-! Part of speech categories
+! Part-of-speech categories (Apertium)
+
+%<n%>
+%<prn%>
+%<post%>
+%<v%>
+%<np%>
+
+! Part of speech categories (MariMorph)
 %<ad%> ! adjective
 %<av%> ! adverb
 %<co%> ! conjunction
@@ -170,8 +178,11 @@ Adjectives ;
 Conjunctions ;
 Interjections ;
 Nouns ; 
+Adverbs ;
+Numerals ;
 Verbs ; 
 Postpositions ; 
+Punctuation ;
 
 PRONOUNS ;
 
@@ -183,17 +194,6 @@ LEXICON K
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-LEXICON PRONOUNS
-
-мый%<pr%>%<1Sg%>:мы PRON_МЫЙ ;
-тый%<pr%>%<2Sg%>:ты PRON_ТЫЙ ;
-тудо%<pr%>%<3Sg%>:туд PRON_МЫЙ ;
-!ме
-!те
-!нуно
-!кӧ
-!шке
 
 LEXICON PRON_МЫЙ
 
@@ -221,6 +221,17 @@ LEXICON PRON_ТУДО
 %<acc%>:ым K ;
 %<comc%>:ыла K ;
 %<comi%>:ыге K ;
+
+LEXICON PRONOUNS
+
+мый%<prn%>%<pers%>%<p1%>%<sg%>:мы PRON_МЫЙ ;
+тый%<prn%>%<pers%>%<p2%>%<sg%>:ты PRON_ТЫЙ ;
+тудо%<prn%>%<pers%>%<p3%>%<sg%>:туд PRON_МЫЙ ;
+!ме
+!те
+!нуно
+!кӧ
+!шке
 
 LEXICON pr
 
@@ -41224,6 +41235,34 @@ LEXICON Verbs
 ячылаш:ячыла•ш vb2-ем ;
 ячылгаш:ячылга•ш vb2-ем ;
 яшкатаҥаш:яшкатаҥа•ш vb1-ам ;
+
+
+LEXICON Punctuation
+
+%.%<sent%>:%. # ;
+%.%.%<sent%>:%.%. # ;
+%.%.%.%<sent%>:%.%.%. # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%-%<guio%>:%- # ;
+%х%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+%–%<guio%>:%– # ;
+,%<cm%>:%, # ;
+%?%<sent%>:%? # ;
+%'%<apos%>:%' # ;
+%"%<sent%>:%" # ;
+%«%<lquot%>:%« # ;
+%»%<rquot%>:%» # ;
+%”%<rquot%>:%” # ;
+%“%<lquot%>:%“ # ;
+%(%<lpar%>:%( # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+%\%<sent%>:%\ # ;
+%/%<sent%>:%/ # ;
 
 
 
