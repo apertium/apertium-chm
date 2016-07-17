@@ -7,7 +7,6 @@
 /Makefile.am -text
 /NEWS -text
 /README -text
-/ap_include.am -text
 /apertium-chm.chm.lexc -text
 /apertium-chm.chm.rlx -text
 /apertium-chm.chm.twol -text
