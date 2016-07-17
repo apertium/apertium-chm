@@ -167,6 +167,12 @@ LEXICON Root
 
 Pronouns ;
 Adjectives ;
+Conjunctions ;
+Interjections ;
+Nouns ; 
+Verbs ; 
+Postpositions ; 
+
 PRONOUNS ;
 
 LEXICON K
@@ -215,6 +221,42 @@ LEXICON PRON_ТУДО
 %<acc%>:ым K ;
 %<comc%>:ыла K ;
 %<comi%>:ыге K ;
+
+LEXICON pr
+
+%<prn%>: # ;
+
+LEXICON nm
+
+%<num%>: # ;
+
+LEXICON no
+
+%<n%>: # ;
+
+LEXICON pn
+
+%<np%>%<top%>: # ;
+
+LEXICON na 
+
+%<np%>%<al%>: # ;
+
+
+LEXICON co
+
+%<co%>: # ;
+
+LEXICON de
+
+%<ij%>: # ;
+
+LEXICON po 
+
+%<post%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! Generated starts here:
 

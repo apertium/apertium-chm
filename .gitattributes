@@ -22,3 +22,4 @@ dev/num2words.txt -text
 dev/reallex.sh -text
 dev/xml2spel.py -text
 /modes.xml -text
+texts/story.chm.txt -text svneol=unset#application/octet-stream
