@@ -4,11 +4,12 @@ Multichar_Symbols
 
 ! Part-of-speech categories (Apertium)
 
-%<n%>
-%<prn%>
-%<post%>
-%<v%>
-%<np%>
+%<n%> ! Noun
+%<prn%> ! Pronoun
+%<post%> ! Postposition
+%<vblex%> ! Verb
+%<np%> ! Proper noun
+%<nom%> ! Nominative case
 
 ! Part of speech categories (MariMorph)
 %<ad%> ! adjective
@@ -159,9 +160,7 @@ Multichar_Symbols
 %<bec1%> ! verbal derivation - 'to become' (1)
 %<bec2%> ! verbal derivation - 'to become' (2)
 
-! Added
-%<nom%> ! Nominative case
-
+! Phonology tags
 %{ы%}
 %>
 
@@ -183,8 +182,6 @@ Numerals ;
 Verbs ; 
 Postpositions ; 
 Punctuation ;
-
-PRONOUNS ;
 
 LEXICON K
 
@@ -222,17 +219,6 @@ LEXICON PRON_ТУДО
 %<comc%>:ыла K ;
 %<comi%>:ыге K ;
 
-LEXICON PRONOUNS
-
-мый%<prn%>%<pers%>%<p1%>%<sg%>:мы PRON_МЫЙ ;
-тый%<prn%>%<pers%>%<p2%>%<sg%>:ты PRON_ТЫЙ ;
-тудо%<prn%>%<pers%>%<p3%>%<sg%>:туд PRON_МЫЙ ;
-!ме
-!те
-!нуно
-!кӧ
-!шке
-
 LEXICON pr
 
 %<prn%>: # ;
@@ -253,7 +239,6 @@ LEXICON na
 
 %<np%>%<al%>: # ;
 
-
 LEXICON co
 
 %<co%>: # ;
@@ -266,14 +251,13 @@ LEXICON po
 
 %<post%>: # ;
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-! Generated starts here:
-
 LEXICON ad
 
 %<ad%>: #;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON Adjectives
 
@@ -33125,6 +33109,15 @@ LEXICON Postpositions
 эшышке:э•шышке po ;
 
 LEXICON Pronouns
+
+мый%<prn%>%<pers%>%<p1%>%<sg%>:мы PRON_МЫЙ ;
+тый%<prn%>%<pers%>%<p2%>%<sg%>:ты PRON_ТЫЙ ;
+тудо%<prn%>%<pers%>%<p3%>%<sg%>:туд PRON_МЫЙ ;
+!ме
+!те
+!нуно
+!кӧ
+!шке
 
 вес:ве•с pr ;
 весе:ве•се pr ;
