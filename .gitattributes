@@ -15,7 +15,6 @@
 /chm.prob -text
 /configure.ac -text
 dev/dict.xml -text
-dev/examples.txt -text
 dev/num2words.txt -text
 dev/reallex.sh -text
 dev/xml2spel.py -text

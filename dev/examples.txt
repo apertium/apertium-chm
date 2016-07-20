@@ -1,5 +1,0 @@
-Genitive:
-
-айдамсыр -> айдамсырын (р is not vowel -> add ы)
-аныкле -> аныклен (normal, last untressed syll.)
-аныкле -> аныклын (last syllable stressed)

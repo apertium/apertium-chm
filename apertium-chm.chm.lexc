@@ -41,6 +41,8 @@ Multichar_Symbols
 %<vb2-эм%> ! verm -em
 
 ! Suffixes inf
+%<ade%> ! Adessive case
+%<ori%> ! Orientative
 %<comp%> ! comparative degree
 %<gen%> ! genitive case
 %<gen%> ! genitive case
@@ -230,6 +232,21 @@ LEXICON nm
 LEXICON no
 
 %<n%>: # ;
+
+LEXICON N_АБАЖУР
+
+%<nom%>: K;
+%<gen%>:ын K ;
+%<dat%>:лан K ;
+%<acc%>:ым K ;
+%<comp%>:ла K ;
+%<comi%>:ге K ;
+%<ine%>:ышто K ;
+%<ill%>:ышко K ;
+%<lat%>:еш K ;
+%<ade%>:ыштыла K ;
+%<shILL%>:ыш K ;
+%<ori%>:ышкыла K ;
 
 LEXICON pn
 
@@ -11224,7 +11241,7 @@ LEXICON Numerals
 
 LEXICON Nouns
 
-абажур:абажу•р no ;
+абажур:абажу•р N_АБАЖУР ;
 аббревиатур:аббревиату•р no ;
 аббревиаций:аббревиа•ций no ;
 абессив:абесси•в no ;
