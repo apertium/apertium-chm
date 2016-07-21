@@ -155,7 +155,28 @@ public class Nominal {
 
 	private boolean isValid() {
 
+		if (this.getWordCase().toInt() == wordCase.SHORT
+			&& this.getPosSuffix().toInt() != PosessiveSuffix.NO_POS)
+			return false;
 		
+		if (this.getWordCase().toInt() == wordCase.SHORT
+			&& 	this.getNumber().toInt() == Number.SOCIATIVE_PLURAL)
+			return false;
+		
+		if (this.getNumber().toInt() == Number.SHORT_PLURAL
+			&& (this.getWordCase().toInt() == WordCase.GENITIVE
+				|| this.getWordCase().toInt() == WordCase.DATIVE
+				|| this.getWordCase().toInt() == WordCase.COMPARATIVE))
+			return false;
+		
+		if (this.getNumber().toInt() == Number.SOCIATIVE_PLURAL
+				&& (this.getWordCase().toInt() == WordCase.INESSIVE
+					|| this.getWordCase().toInt() == WordCase.ILLATIVE
+					|| this.getWordCase().toInt() == WordCase.LATIVE
+					|| this.getWordCase().toInt() == WordCase.ADESSIVE
+					|| this.getWordCase().toInt() == WordCase.SHORT
+					|| this.getWordCase().toInt() == WordCase.ORIENTATIVE))
+				return false;
 		
 		return true;
 	}
@@ -217,24 +238,42 @@ public class Nominal {
 	}
 
 	public String getLexicalForm() {
-		return getLemma() + this.getTags() + "/" + this.getSurfaceForm();
+		String surfaceForm = this.getSurfaceForm();
+		if (surfaceForm != null) {
+			ArrayList<String> tags = this.getTags();
+			String spelingTags = "";
+			
+			for (String tag : tags)
+				if (spelingTags.equals(""))
+					spelingTags = tag;
+				else
+					if (!tag.equals(""))
+						spelingTags += "." + tag;
+			
+			return getLemma() + " ; " + surfaceForm + " ; " +  spelingTags;
+		}
+		else
+			return null;
 	}
 
-	public String getTags() {
+	public ArrayList<String> getTags() {
 		
-		// Tag order: pos.nbr.case.poss.stress.enc
-		String tags = number.getTag() + wordCase.getTag() + posSuffix.getTag() + stress.getTag();
+		ArrayList<String> tags = new ArrayList<String>();
 		
+		tags.add(number.getTag());
+		tags.add(wordCase.getTag());
+		tags.add(posSuffix.getTag());
+		tags.add(stress.getTag());
 		if (extra)
-			tags += "<extra>";
-
+			tags.add("<extra>");
 		
-		String encliticTags = "";
+		
 		for (Enclitic enclitic : enclitics)
 			if (enclitic instanceof Enclitic) // Check nulls
-				encliticTags += enclitic.getTag();
+				tags.add(enclitic.getTag());
 		
-		tags += encliticTags;
+		for (int i = 0; i < tags.size(); i++)
+			tags.set(i, tags.get(i).replace(">", "").replace("<", ""));
 		
 		return tags;
 	}

@@ -1,30 +1,36 @@
+import java.io.BufferedReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Generate {
 	public static void main(String[] args) {
 
+		final String POS = "no";
+		
 		ArrayList<Enclitic> enclitics = new ArrayList<Enclitic>();
 
 		enclitics.add(new ThirdPersonSingEnclitic());
 		enclitics.add(new SEnclitic());
 		enclitics.add(new SEnclitic());
 
-		Nominal nominal = new Nominal("абажур", new Stress(Stress.NORMAL),
-				new Number(Number.SECOND_PLURAL), new WordCase(WordCase.NOMINATIVE), new PosessiveSuffix(PosessiveSuffix.NO_POS),
-				enclitics, false);
-
-		System.out.println(nominal.getLexicalForm());
-
-
-		String allSurfaceForms = generateAllForms("абажур");
 		
-		System.out.println(allSurfaceForms);
+		Scanner input = new Scanner(System.in);
+		
+		
+		while (input.hasNextLine()) {
+			String allSurfaceForms = generateAllForms(input.nextLine(), POS);
+			System.out.println(allSurfaceForms);
+		}
+		
+		input.close();
+				
 	}
 
-	public static String generateAllForms(String lemma) {
+	public static String generateAllForms(String lemma, String POS) {
+		
 
 		// Initalization
 		ArrayList<Stress> stresses = getStresses();
@@ -35,20 +41,36 @@ public class Generate {
 
 		StringBuilder lexicalForms = new StringBuilder();
 
-		// Generate every form
+		// Generate every form without enclitics (and derivation and other stresses 
+		// (normal stress is only used), and also without "extra"
 		for (Stress stress : stresses)
-			for (Number number : numbers)
-				for (WordCase wordCase : cases)
-					for (PosessiveSuffix possSuffix : possessiveSuffixes) {
-						for (HashSet<Enclitic> encliticSubsequence : getSubsequences(enclitics)) {
-							Nominal surfaceWordObject = new Nominal(lemma, stress,
-									number, wordCase, possSuffix,
-									new ArrayList<Enclitic>(encliticSubsequence), false);
-							String lexicalAnalysises = surfaceWordObject.getLexicalForm();
-							lexicalForms.append(lexicalAnalysises + "\n");
-						}
-					}
+		for (Number number : numbers)
+			for (WordCase wordCase : cases)
+				for (PosessiveSuffix possSuffix : possessiveSuffixes) {
+						Nominal surfaceWordObject = new Nominal(lemma, stress,
+								number, wordCase, possSuffix,
+								new ArrayList<Enclitic>(), false);
+						String lexicalAnalyse = surfaceWordObject.getLexicalForm();
+						if (lexicalAnalyse != null) 
+							lexicalForms.append(lexicalAnalyse  + " ; " + POS + "\n");
+				}
 
+		
+		// Generate every form with enclitics
+//		for (Stress stress : stresses)
+//			for (Number number : numbers)
+//				for (WordCase wordCase : cases)
+//					for (PosessiveSuffix possSuffix : possessiveSuffixes) {
+//						for (HashSet<Enclitic> encliticSubsequence : getSubsequences(enclitics)) {
+//							Nominal surfaceWordObject = new Nominal(lemma, stress,
+//									number, wordCase, possSuffix,
+//									new ArrayList<Enclitic>(encliticSubsequence), false);
+//							String lexicalAnalysises = surfaceWordObject.getLexicalForm();
+//							lexicalForms.append(lexicalAnalysises + "\n");
+//						}
+//					}
+
+		
 
 		return lexicalForms.toString();
 	}
