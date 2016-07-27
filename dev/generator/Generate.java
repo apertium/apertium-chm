@@ -16,9 +16,7 @@ public class Generate {
 		enclitics.add(new SEnclitic());
 		enclitics.add(new SEnclitic());
 
-		
 		Scanner input = new Scanner(System.in);
-		
 		
 		while (input.hasNextLine()) {
 			String allSurfaceForms = generateAllForms(input.nextLine(), POS);
@@ -44,16 +42,16 @@ public class Generate {
 		// Generate every form without enclitics (and derivation and other stresses 
 		// (normal stress is only used), and also without "extra"
 		for (Stress stress : stresses)
-		for (Number number : numbers)
+		    for (Number number : numbers)
 			for (WordCase wordCase : cases)
-				for (PosessiveSuffix possSuffix : possessiveSuffixes) {
-						Nominal surfaceWordObject = new Nominal(lemma, stress,
-								number, wordCase, possSuffix,
-								new ArrayList<Enclitic>(), false);
-						String lexicalAnalyse = surfaceWordObject.getLexicalForm();
-						if (lexicalAnalyse != null) 
-							lexicalForms.append(lexicalAnalyse  + " ; " + POS + "\n");
-				}
+			    for (PosessiveSuffix possSuffix : possessiveSuffixes) {
+				Nominal surfaceWordObject = new Nominal(lemma, stress,
+									number, wordCase, possSuffix,
+									new ArrayList<Enclitic>(), false);
+				String lexicalAnalyse = surfaceWordObject.getLexicalForm();
+				if (lexicalAnalyse != null) 
+				    lexicalForms.append(lexicalAnalyse  + " ; " + POS + "\n");
+			    }
 
 		
 		// Generate every form with enclitics
