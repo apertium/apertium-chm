@@ -1,6 +1,6 @@
 AC_PREREQ(2.52)
 
-AC_INIT([Apertium Mari], [0.1.0], [apertium-stuff@lists.sourceforge.net], [apertium-chm], [http://wiki.apertium.org/wiki/Apertium-chm])
+AC_INIT([Apertium Mari], [0.1.0], [apertium-stuff@lists.sourceforge.net], [apertium-chm], [https://wiki.apertium.org/wiki/Apertium-chm])
 AM_INIT_AUTOMAKE
 
 AC_PROG_LN_S
