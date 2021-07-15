@@ -1,0 +1,6 @@
+{
+  "story": {
+    "input": "story-input.txt",
+    "mode": "chm-tagger"
+  }
+}
